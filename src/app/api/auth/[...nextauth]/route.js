@@ -9,7 +9,6 @@ export const authOptions = {
     CredentialsProvider({
       name: "credentials",
       credentials: {},
-
       async authorize(credentials) {
         const { email, password } = credentials;
 
@@ -26,10 +25,15 @@ export const authOptions = {
           if (!passwordsMatch) {
             return null;
           }
-
-          return user;
+          console.log(user);
+          return {
+            id: user._id,
+            email: user.email,
+            username: user.username, // Pastikan ini disertakan
+          };
         } catch (error) {
           console.log("Error: ", error);
+          return null;
         }
       },
     }),
@@ -39,7 +43,19 @@ export const authOptions = {
   },
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
-    signIn: "/login",
+    signIn: "/login", // Pastikan ini sesuai dengan halaman login Anda
+  },
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token.username = user.username; // Tambahkan username ke token
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      session.user.username = token.username; // Masukkan username ke session
+      return session;
+    },
   },
 };
 

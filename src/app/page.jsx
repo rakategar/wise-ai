@@ -14,7 +14,7 @@ export default function () {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen " >
       
-      <div className="fixed top-0 p-4 z-[11] ">
+      <div className="fixed top-0 p-4 z-50 ">
         <Navbar/>
       </div>
       <Page1/>

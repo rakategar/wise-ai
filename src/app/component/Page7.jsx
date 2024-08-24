@@ -10,7 +10,7 @@ export default function Page1() {
             </h1>
 
       <div className='flex flex-row gap-4 items-center mb-8'>
-        <div className='bg-white rounded-lg w-96 h-8 '/>
+        <input className='bg-white rounded-lg w-96 h-8 px-2 text-black'/>
         <Image
               src="/iconsearch.svg"
               alt="Admin Tools Screenshot"
@@ -19,26 +19,29 @@ export default function Page1() {
               className="rounded-tl-lg z-[10]"
             />
       </div>
-        <div className='flex flex-col gap-4 items-center '>
-            <div className='bg-white rounded-lg flex flex-col w-[620px] z-30 p-4 '>
-                <div className='flex flex-row  items-center justify-between'>
-                <h1 className=' text-black text-xl font-bold'>Apa itu Forwardin?</h1>
-                <p className='flex justify-center items-center bg-secondary w-5 h-5 font-bold '>-</p>
-                </div>
-                <p className='text-black text-sm'>Forwardin adalah sebuah platform alat pengelolaan pesan WhatsApp yang dirancang untuk membantu Anda mengirim pesan ke banyak nomor dan grup WhatsApp secara bersamaan. Forwardin juga menyediakan berbagai fitur canggih seperti auto-reply, fitur broadcast, manajemen kampanye, serta sinkronisasi kontak WhatsApp dan kontak Google.</p>
+        <div className='flex flex-col gap-4 items-center z-30 w-[620px]'>
+            
+            <div className="collapse collapse-arrow  text-black bg-white">
+            <input type="radio" name="my-accordion-2" defaultChecked />
+            <div className="collapse-title text-xl font-bold ">Apa itu Forwardin ?</div>
+            <div className="collapse-content">
+                <p>Forwardin adalah sebuah platform alat pengelolaan pesan WhatsApp yang dirancang untuk membantu Anda mengirim pesan ke banyak nomor dan grup WhatsApp secara bersamaan. Forwardin juga menyediakan berbagai fitur canggih seperti auto-reply, fitur broadcast, manajemen kampanye, serta sinkronisasi kontak WhatsApp dan kontak Google.</p>
             </div>
-            <div className='bg-white rounded-lg flex flex-col w-[620px] z-30 p-4 '>
-                <div className='flex flex-row  items-center justify-between'>
-                <h1 className=' text-black text-xl font-bold'>Apakah forwardin cocok untuk saya?</h1>
-                <p className='flex justify-center items-center bg-secondary w-5 h-5 font-bold '>-</p>
-                </div>
             </div>
-            <div className='bg-white rounded-lg flex flex-col w-[620px] z-30 p-4 '>
-            <div className='flex flex-row  items-center justify-between'>
-                <h1 className=' text-black text-xl font-bold'>Apakah Forwardin perlu di-install ke komputer?</h1>
-                <p className='flex justify-center items-center bg-secondary w-5 h-5 font-bold '>-</p>
-                </div>
+            <div className="collapse collapse-arrow  text-black bg-white">
+            <input type="radio" name="my-accordion-2" />
+            <div className="collapse-title text-xl font-bold ">Apakah forwardin cocok untuk saya?</div>
+            <div className="collapse-content">
+                <p>Forwardin adalah sebuah platform alat pengelolaan pesan WhatsApp yang dirancang untuk membantu Anda mengirim pesan ke banyak nomor dan grup WhatsApp secara bersamaan. Forwardin juga menyediakan berbagai fitur canggih seperti auto-reply, fitur broadcast, manajemen kampanye, serta sinkronisasi kontak WhatsApp dan kontak Google.</p>
             </div>
+            </div>
+            <div className="collapse collapse-arrow  text-black bg-white">
+            <input type="radio" name="my-accordion-2" />
+            <div className="collapse-title text-xl font-bold ">Apakah Forwardin perlu di-install ke komputer?</div>
+            <div className="collapse-content">
+                <p>Forwardin adalah sebuah platform alat pengelolaan pesan WhatsApp yang dirancang untuk membantu Anda mengirim pesan ke banyak nomor dan grup WhatsApp secara bersamaan. Forwardin juga menyediakan berbagai fitur canggih seperti auto-reply, fitur broadcast, manajemen kampanye, serta sinkronisasi kontak WhatsApp dan kontak Google.</p>
+            </div>
+</div>
         </div>
         
     </div>
