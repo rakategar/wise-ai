@@ -29,7 +29,7 @@ export const authOptions = {
           return {
             id: user._id,
             email: user.email,
-            username: user.username, // Pastikan ini disertakan
+            username: user.username,
           };
         } catch (error) {
           console.log("Error: ", error);
@@ -43,22 +43,24 @@ export const authOptions = {
   },
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
-    signIn: "/login", // Pastikan ini sesuai dengan halaman login Anda
+    signIn: "/login",
   },
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
-        token.username = user.username; // Tambahkan username ke token
+        token.username = user.username;
       }
       return token;
     },
     async session({ session, token }) {
-      session.user.username = token.username; // Masukkan username ke session
+      session.user.username = token.username;
       return session;
     },
   },
 };
 
+// Ensure that the NextAuth handler is exported as the default
 const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
+export default handler;
