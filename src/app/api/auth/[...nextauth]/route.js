@@ -59,8 +59,13 @@ export const authOptions = {
   },
 };
 
-// Ensure that the NextAuth handler is exported as the default
 const handler = NextAuth(authOptions);
 
-export { handler as GET, handler as POST };
-export default handler;
+// Export named functions for the HTTP methods
+export async function GET(req, res) {
+  return handler(req, res);
+}
+
+export async function POST(req, res) {
+  return handler(req, res);
+}
