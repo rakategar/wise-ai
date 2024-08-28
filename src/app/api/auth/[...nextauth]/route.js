@@ -4,7 +4,7 @@ import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 
-export const authOptions = {
+const authOptions = {
   providers: [
     CredentialsProvider({
       name: "credentials",
@@ -25,7 +25,7 @@ export const authOptions = {
           if (!passwordsMatch) {
             return null;
           }
-          console.log(user);
+
           return {
             id: user._id,
             email: user.email,
@@ -59,13 +59,10 @@ export const authOptions = {
   },
 };
 
-const handler = NextAuth(authOptions);
+export const GET = async (req, res) => {
+  return NextAuth(req, res, authOptions);
+};
 
-// Export named functions for the HTTP methods
-export async function GET(req, res) {
-  return handler(req, res);
-}
-
-export async function POST(req, res) {
-  return handler(req, res);
-}
+export const POST = async (req, res) => {
+  return NextAuth(req, res, authOptions);
+};
