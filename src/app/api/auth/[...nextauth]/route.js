@@ -1,10 +1,10 @@
 import { connectMongoDB } from "../../../../../lib/mongodb";
 import User from "../../../../../models/user";
-import NextAuth, { AuthOptions } from "next-auth";
+import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 
-export const authOptions = {
+const authOptions = {
   providers: [
     CredentialsProvider({
       name: "credentials",
@@ -59,10 +59,7 @@ export const authOptions = {
   },
 };
 
-export const GET = async (req, res) => {
-  return NextAuth(req, res, authOptions);
-};
+// Directly export the NextAuth handler with your options
+const handler = NextAuth(authOptions);
 
-export const POST = async (req, res) => {
-  return NextAuth(req, res, authOptions);
-};
+export { handler as GET, handler as POST };
