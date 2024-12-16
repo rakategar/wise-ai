@@ -1,5 +1,6 @@
-"use client"
+"use client";
 import React, { useState, useRef } from "react";
+import { motion } from "framer-motion";
 import axios from "axios";
 import {
   FileCsv,
@@ -22,13 +23,18 @@ function Chatbot() {
   const [chatHistory, setChatHistory] = useState([]); // Menyimpan riwayat chat
   const [isImageGenerate, setIsImageGenerate] = useState(false); // State untuk checkbox PaintBrush
 
-
   const textareaRef = useRef(null);
 
   const fileInputRef = useRef(null);
 
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
+  };
+  const splitIntoSyllables = (text) => {
+    if (typeof text !== "string") {
+      return [];
+    }
+    return text.split(/\s+/); // Pisahkan berdasarkan spasi
   };
 
   const handleUpload = async () => {
@@ -87,9 +93,9 @@ function Chatbot() {
   };
 
   const handleChat = async (chatQuery) => {
-    if (typeof chatQuery !== "string" || !chatQuery.trim()) return; // Ensure chatQuery is a valid string
+    if (typeof chatQuery !== "string" || !chatQuery.trim()) return;
+
     setQuery("");
-    // Tambahkan query ke chat history
     setChatHistory((prev) => [...prev, { type: "query", text: chatQuery }]);
     setChatHistory((prev) => [
       ...prev,
@@ -104,15 +110,17 @@ function Chatbot() {
         query: chatQuery,
       });
 
-      // Gantikan "Loading..." dengan respons dari API
-      setChatHistory((prev) => {
-        const updatedHistory = [...prev];
-        updatedHistory[updatedHistory.length - 1] = {
-          type: "response",
-          text: res.data.answer,
-        };
-        return updatedHistory;
-      });
+      // Delay sebelum mengganti loading dots
+      setTimeout(() => {
+        setChatHistory((prev) => {
+          const updatedHistory = [...prev];
+          updatedHistory[updatedHistory.length - 1] = {
+            type: "response",
+            text: res.data.answer,
+          };
+          return updatedHistory;
+        });
+      }, 5000); // Delay 1 detik
     } catch (error) {
       console.error("Error querying chat:", error);
       setChatHistory((prev) => {
@@ -127,11 +135,13 @@ function Chatbot() {
   };
 
   const handleImageGenerate = async (imageQuery) => {
-    
     setChatHistory((prev) => [
       ...prev,
       { type: "query", text: imageQuery },
-      { type: "response", text: <span className="loading loading-dots loading-md"></span> },
+      {
+        type: "response",
+        text: <span className="loading loading-dots loading-md"></span>,
+      },
     ]);
     setQuery("");
 
@@ -160,8 +170,6 @@ function Chatbot() {
     }
   };
 
-  
-
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       e.preventDefault(); // Mencegah default behavior Enter di textarea
@@ -172,9 +180,8 @@ function Chatbot() {
         handleUpload(); // Trigger file upload when both file and query are present
       } else if (!isChecked && currentQuery) {
         handleChat(currentQuery); // Otherwise, trigger chat query
-      }else if (isChecked  && currentQuery) {
+      } else if (isChecked && currentQuery) {
         handleImageGenerate(currentQuery); // Otherwise, trigger chat query
-
       }
     }
   };
@@ -197,14 +204,15 @@ function Chatbot() {
     fileInputRef.current.click();
   };
 
-  
-
   const handleCancelFile = () => {
     setFile(null); // Clear file state
   };
 
   return (
-    <div className="flex flex-col h-screen mx-auto p-6  text-center font-sans w-full " style={{ backgroundColor: '#f7f7f7'}}>
+    <div
+      className="flex flex-col h-screen mx-auto p-6  text-center font-sans w-full "
+      style={{ backgroundColor: "#f7f7f7" }}
+    >
       <Navbar />
 
       <input
@@ -216,45 +224,66 @@ function Chatbot() {
 
       {/* display chat box */}
       <div className="flex flex-col mb-6 rounded-lg mx-60 p-4 overflow-auto text-black">
-      {chatHistory.map((chat, index) => (
-        <div
-          key={index}
-          className={`p-4 my-1 ${
-            chat.type === "query"
-              ? "text-left bg-cyan-400 text-white font-medium ml-auto max-w-3xl rounded-b-3xl rounded-l-3xl"
-              : "text-left rounded-xl"
-          }`}
-        >
-          <p className="text-xl font-bold mb-1">
-            {chat.type === "query" ? "" : "DataGuru"}
-          </p>
-          {chat.type === "response" && typeof chat.text === "string" && chat.text.match(/\.(png|jpe?g|gif)$/i) ? (
-            // Render gambar jika respons adalah path gambar
-            <img
-              src={encodeURI(chat.text)}
-              alt="Generated"
-              className="rounded-md"
-              width={300} height={300}
-            />
-          ) : (
-            // Render teks untuk respons selain gambar
-            <p className="text-base">{chat.text}</p>
-          )}
-        </div>
-      ))}
+        {chatHistory.map((chat, index) => (
+          <motion.div
+            key={index}
+            className={`p-4 my-1 ${
+              chat.type === "query"
+                ? "text-left bg-cyan-400 text-white font-medium ml-auto max-w-3xl rounded-b-3xl rounded-l-3xl"
+                : "text-left rounded-xl"
+            }`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: index * 0.01 }} // Tambahkan delay untuk setiap pesan
+          >
+            <p className="text-xl font-bold mb-1">
+              {chat.type === "query" ? "" : "wise.ai"}
+            </p>
+            {chat.type === "response" &&
+            typeof chat.text === "string" &&
+            chat.text.match(/\.(png|jpe?g|gif)$/i) ? (
+              <img
+                src={encodeURI(chat.text)}
+                alt="Generated"
+                className="rounded-md"
+                width={300}
+                height={300}
+              />
+            ) : (
+              <p className="text-base">
+                {splitIntoSyllables(chat.text).map((syllable, i) => (
+                  <motion.span
+                    key={i}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: i * 0.01 }} // Animasi berurutan per suku kata
+                  >
+                    {syllable}{" "}
+                  </motion.span>
+                ))}
+              </p>
+            )}
+          </motion.div>
+        ))}
       </div>
 
       <div className="flex flex-col flex-grow justify-end">
         <div className="flex flex-col">
           {file && (
-            <div className="flex flex-row items-center gap-8 justify-center pr-72 mr-72 py-4">
-              <img src="/csv.png" width={30} height={30} alt="CSV Logo" className="shadow-xl" />
+            <div className="flex flex-row items-center gap-8 justify-center   mr-72 py-4">
+              <img
+                src="/csv.png"
+                width={30}
+                height={30}
+                alt="CSV Logo"
+                className="shadow-xl"
+              />
               <span className="font-medium text-base-300">{file.name}</span>
               <button
                 onClick={handleCancelFile}
-                className="btn btn-ghost btn-sm"
+                className="btn btn-ghost btn-sm text-black"
               >
-                <X size={24} />
+                <X size={24} className="text-black" />
               </button>
             </div>
           )}
@@ -295,18 +324,19 @@ function Chatbot() {
                 onChange={handleCheckboxChange}
                 style={{ display: "none" }}
               />
-              
+
               {/* Label with dynamic icon */}
-              <label htmlFor="custom-checkbox" className="btn btn-ghost rounded-full">
+              <label
+                htmlFor="custom-checkbox"
+                className="btn btn-ghost rounded-full"
+              >
                 {isChecked ? (
                   <PaintBrush size={24} weight="fill" />
                 ) : (
                   <PaintBrush size={24} />
                 )}
               </label>
-    
-              
-              
+
               {(query || file) && (
                 <button
                   onClick={() => {
