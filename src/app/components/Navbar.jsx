@@ -35,7 +35,7 @@ const Navbar = () => {
                   </svg>
                 </label>
               </div>
-              <Link href={"/"} className="flex btn btn-ghost flex-row ">
+              <Link href={"/"} className="cursor-pointer flex flex-row ml-8 ">
                 <h1 className="font-bold text-2xl   text-blue-600">wise</h1>
                 <h1 className="font-bold text-2xl  text-amber-400">.ai</h1>
               </Link>

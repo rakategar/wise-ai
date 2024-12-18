@@ -37,16 +37,7 @@ export default function Page6() {
           <button className="btn rounded-l-lg bg-secondary hover:bg-sky-700 text-white mb-4 gap-8 border-none">
             Start Now
           </button>
-          <div className="flex flex-row gap-2 items-center my-1">
-            <Image
-              src="/icon1.svg"
-              alt="Admin Tools Screenshot"
-              width={30}
-              height={30}
-              className="rounded-tl-lg z-[10]"
-            />
-            <p className="text-sm text-black">100 Auto reply</p>
-          </div>
+
           <div className="flex flex-row gap-2 items-center my-1">
             <Image
               src="/icon2.svg"
@@ -55,7 +46,7 @@ export default function Page6() {
               height={30}
               className="rounded-tl-lg z-[10]"
             />
-            <p className="text-sm text-black">500 Broadcast</p>
+            <p className="text-sm text-black">IoT Web Panel</p>
           </div>
           <div className="flex flex-row gap-2 items-center my-1">
             <Image
@@ -65,7 +56,7 @@ export default function Page6() {
               height={30}
               className="rounded-tl-lg z-[10]"
             />
-            <p className="text-sm text-black">50 Campaign</p>
+            <p className="text-sm text-black">Datalyze AI</p>
           </div>
           <div className="flex flex-row gap-2 items-center my-1">
             <Image
@@ -75,7 +66,7 @@ export default function Page6() {
               height={30}
               className="rounded-tl-lg z-[10]"
             />
-            <p className="text-sm text-black">500 Contact</p>
+            <p className="text-sm text-black">Customer Service </p>
           </div>
           <div className="flex flex-row gap-2 items-center my-1">
             <Image
@@ -95,7 +86,7 @@ export default function Page6() {
               height={30}
               className="rounded-tl-lg z-[10]"
             />
-            <p className="text-sm text-black">Excel / CSV Contact Import</p>
+            <p className="text-sm text-black">Excel / CSV Import</p>
           </div>
           <div className="flex flex-row gap-2 items-center my-1">
             <Image
@@ -105,7 +96,7 @@ export default function Page6() {
               height={30}
               className="rounded-tl-lg z-[10]"
             />
-            <p className="text-sm text-black">Google Contact Sync</p>
+            <p className="text-sm text-black">Google Sync</p>
           </div>
           <div className="flex flex-row gap-2 items-center my-1"></div>
         </div>
@@ -120,25 +111,16 @@ export default function Page6() {
             yang menunjang kreativitas
           </p>
           <div className="flex flex-row items-center gap-4 ">
-            <h1 className="text-2xl font-bold text-black py-4">Rp 65.000</h1>
+            <h1 className="text-2xl font-bold text-black py-4">Rp 15.000</h1>
             <p className="text-black text-sm ">/ bulan</p>
           </div>
           <p className="text-black text-sm opacity-50 mb-4">
-            Rp. 650.000 /tahun
+            Rp. 150.000 /tahun
           </p>
           <button className="btn text-white bg-[#FFB020] hover:bg-amber-600 mb-4">
             Start Now
           </button>
-          <div className="flex flex-row gap-2 items-center my-1">
-            <Image
-              src="/icon1.svg"
-              alt="Admin Tools Screenshot"
-              width={30}
-              height={30}
-              className="rounded-tl-lg z-[10]"
-            />
-            <p className="text-sm text-black">100 Auto reply</p>
-          </div>
+
           <div className="flex flex-row gap-2 items-center my-1">
             <Image
               src="/icon2.svg"
@@ -147,7 +129,7 @@ export default function Page6() {
               height={30}
               className="rounded-tl-lg z-[10]"
             />
-            <p className="text-sm text-black">500 Broadcast</p>
+            <p className="text-sm text-black">IoT Web Panel</p>
           </div>
           <div className="flex flex-row gap-2 items-center my-1">
             <Image
@@ -157,7 +139,7 @@ export default function Page6() {
               height={30}
               className="rounded-tl-lg z-[10]"
             />
-            <p className="text-sm text-black">50 Campaign</p>
+            <p className="text-sm text-black">Datalyze AI</p>
           </div>
           <div className="flex flex-row gap-2 items-center my-1">
             <Image
@@ -167,7 +149,7 @@ export default function Page6() {
               height={30}
               className="rounded-tl-lg z-[10]"
             />
-            <p className="text-sm text-black">500 Contact</p>
+            <p className="text-sm text-black">Customer Service </p>
           </div>
           <div className="flex flex-row gap-2 items-center my-1">
             <Image
@@ -187,7 +169,7 @@ export default function Page6() {
               height={30}
               className="rounded-tl-lg z-[10]"
             />
-            <p className="text-sm text-black">Excel / CSV Contact Import</p>
+            <p className="text-sm text-black">Excel / CSV Import</p>
           </div>
           <div className="flex flex-row gap-2 items-center my-1">
             <Image
@@ -197,7 +179,7 @@ export default function Page6() {
               height={30}
               className="rounded-tl-lg z-[10]"
             />
-            <p className="text-sm text-black">Google Contact Sync</p>
+            <p className="text-sm text-black">Google Sync</p>
           </div>
           <div className="flex flex-row gap-2 items-center my-1"></div>
         </div>
@@ -212,26 +194,17 @@ export default function Page6() {
             yang menunjang kreativitas
           </p>
           <div className="flex flex-row items-center gap-4 ">
-            <h1 className="text-2xl font-bold text-black py-4">Rp 76.000</h1>
+            <h1 className="text-2xl font-bold text-black py-4">Rp 85.000</h1>
             <p className="text-black text-sm ">/ bulan</p>
           </div>
           <p className="text-black text-sm opacity-50 mb-4">
-            Rp. 800.000 /tahun
+            Rp. 900.000 /tahun
           </p>
           <button className="btn rounded-l-lg bg-secondary hover:bg-sky-700 text-white mb-4 gap-8 border-none">
             {" "}
             Start Now
           </button>
-          <div className="flex flex-row gap-2 items-center my-1">
-            <Image
-              src="/icon1.svg"
-              alt="Admin Tools Screenshot"
-              width={30}
-              height={30}
-              className="rounded-tl-lg z-[10]"
-            />
-            <p className="text-sm text-black">100 Auto reply</p>
-          </div>
+
           <div className="flex flex-row gap-2 items-center my-1">
             <Image
               src="/icon2.svg"
@@ -240,7 +213,7 @@ export default function Page6() {
               height={30}
               className="rounded-tl-lg z-[10]"
             />
-            <p className="text-sm text-black">500 Broadcast</p>
+            <p className="text-sm text-black">IoT Web Panel</p>
           </div>
           <div className="flex flex-row gap-2 items-center my-1">
             <Image
@@ -250,7 +223,7 @@ export default function Page6() {
               height={30}
               className="rounded-tl-lg z-[10]"
             />
-            <p className="text-sm text-black">50 Campaign</p>
+            <p className="text-sm text-black">Datalyze AI</p>
           </div>
           <div className="flex flex-row gap-2 items-center my-1">
             <Image
@@ -260,7 +233,7 @@ export default function Page6() {
               height={30}
               className="rounded-tl-lg z-[10]"
             />
-            <p className="text-sm text-black">500 Contact</p>
+            <p className="text-sm text-black">Customer Service </p>
           </div>
           <div className="flex flex-row gap-2 items-center my-1">
             <Image
@@ -280,7 +253,7 @@ export default function Page6() {
               height={30}
               className="rounded-tl-lg z-[10]"
             />
-            <p className="text-sm text-black">Excel / CSV Contact Import</p>
+            <p className="text-sm text-black">Excel / CSV Import</p>
           </div>
           <div className="flex flex-row gap-2 items-center my-1">
             <Image
@@ -290,7 +263,7 @@ export default function Page6() {
               height={30}
               className="rounded-tl-lg z-[10]"
             />
-            <p className="text-sm text-black">Google Contact Sync</p>
+            <p className="text-sm text-black">Google Sync</p>
           </div>
           <div className="flex flex-row gap-2 items-center my-1"></div>
         </div>
@@ -305,26 +278,17 @@ export default function Page6() {
             yang menunjang kreativitas
           </p>
           <div className="flex flex-row items-center gap-4 ">
-            <h1 className="text-2xl font-bold text-black py-4">Rp 86.000</h1>
+            <h1 className="text-2xl font-bold text-black py-4">Rp 100.000</h1>
             <p className="text-black text-sm ">/ bulan</p>
           </div>
           <p className="text-black text-sm opacity-50 mb-4">
-            Rp. 900.000 /tahun
+            Rp. 1.000.000 /tahun
           </p>
           <button className="btn rounded-l-lg bg-secondary hover:bg-sky-700 text-white mb-4 gap-8 border-none">
             {" "}
             Start Now
           </button>
-          <div className="flex flex-row gap-2 items-center my-1">
-            <Image
-              src="/icon1.svg"
-              alt="Admin Tools Screenshot"
-              width={30}
-              height={30}
-              className="rounded-tl-lg z-[10]"
-            />
-            <p className="text-sm text-black">100 Auto reply</p>
-          </div>
+
           <div className="flex flex-row gap-2 items-center my-1">
             <Image
               src="/icon2.svg"
@@ -333,7 +297,7 @@ export default function Page6() {
               height={30}
               className="rounded-tl-lg z-[10]"
             />
-            <p className="text-sm text-black">500 Broadcast</p>
+            <p className="text-sm text-black">IoT Web Panel</p>
           </div>
           <div className="flex flex-row gap-2 items-center my-1">
             <Image
@@ -343,7 +307,7 @@ export default function Page6() {
               height={30}
               className="rounded-tl-lg z-[10]"
             />
-            <p className="text-sm text-black">50 Campaign</p>
+            <p className="text-sm text-black">Datalyze AI</p>
           </div>
           <div className="flex flex-row gap-2 items-center my-1">
             <Image
@@ -353,7 +317,7 @@ export default function Page6() {
               height={30}
               className="rounded-tl-lg z-[10]"
             />
-            <p className="text-sm text-black">500 Contact</p>
+            <p className="text-sm text-black">Customer Service </p>
           </div>
           <div className="flex flex-row gap-2 items-center my-1">
             <Image
@@ -373,7 +337,7 @@ export default function Page6() {
               height={30}
               className="rounded-tl-lg z-[10]"
             />
-            <p className="text-sm text-black">Excel / CSV Contact Import</p>
+            <p className="text-sm text-black">Excel / CSV Import</p>
           </div>
           <div className="flex flex-row gap-2 items-center my-1">
             <Image
@@ -383,7 +347,7 @@ export default function Page6() {
               height={30}
               className="rounded-tl-lg z-[10]"
             />
-            <p className="text-sm text-black">Google Contact Sync</p>
+            <p className="text-sm text-black">Google Sync</p>
           </div>
           <div className="flex flex-row gap-2 items-center my-1"></div>
         </div>

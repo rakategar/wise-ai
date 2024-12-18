@@ -16,11 +16,11 @@ export default function Page2() {
         transition={{ duration: 1 }} // Animation duration
       >
         <Image
-          src="/gambarpage2.svg"
+          src="/gambarpanel.png"
           alt="Admin Tools Screenshot"
           width={465}
           height={292.36}
-          className="rounded-tl-lg z-[10]"
+          className="rounded-tl-lg z-[10] shadow-2xl rounded-xl"
         />
       </motion.div>
 
@@ -31,7 +31,7 @@ export default function Page2() {
         animate={{ opacity: 1, x: 0 }} // Animate to its normal position
         transition={{ duration: 1, delay: 0.2 }} // Add a slight delay for staggered effect
       >
-        <div className="mt-[45px] text-left">
+        <div className=" text-left">
           <div className="text-4xl font-bold text-black flex flex-row">
             Be
             <h1 className="text-4xl font-bold text-amber-400">

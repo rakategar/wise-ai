@@ -59,17 +59,17 @@ export default function Page1() {
 
       {/* Login Form Section */}
       <motion.div
-        className="z-[50]" // Set higher z-index to bring this image to the top layer
+        className="z-[40]" // Set higher z-index to bring this image to the top layer
         initial={{ opacity: 0, x: 200 }} // Start from right side
         animate={{ opacity: 1, x: 0 }} // Animate to normal position
         transition={{ duration: 1, delay: 0.2 }} // Add slight delay for effect
       >
         <Image
-          src="/gambarlogin.svg"
+          src="/imagelanding.png"
           alt="Admin Tools Screenshot"
           width={465}
           height={292.36}
-          className="rounded-tl-lg"
+          className="rounded-tl-lg rounded-xl shadow-2xl"
         />
       </motion.div>
     </div>

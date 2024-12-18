@@ -39,11 +39,11 @@ export default function Page3() {
         transition={{ duration: 1, delay: 0.2 }} // Slight delay for staggered effect
       >
         <Image
-          src="/gambarpage3.svg"
+          src="/chat.png"
           alt="Admin Tools Screenshot"
           width={465}
           height={292.36}
-          className="rounded-tl-lg z-[10]"
+          className="rounded-tl-lg z-[10] rounded-xl shadow-2xl"
         />
       </motion.div>
     </div>

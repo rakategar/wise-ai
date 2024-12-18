@@ -211,7 +211,7 @@ export default function Page() {
             height={20}
             className="ml-4"
           />
-          <p className="text-black">Auto Reply</p>
+          <p className="text-black">Automation</p>
         </div>
         <div
           className={`w-56 h-10 hover:bg-gray-200 rounded-lg flex items-center p-1 gap-2 transition-all duration-300 ${
@@ -241,20 +241,7 @@ export default function Page() {
           />
           <p className="text-black">Analytic</p>
         </div>
-        <div
-          className={`w-56 h-10 hover:bg-gray-200 rounded-lg flex items-center p-1 gap-2 transition-all duration-300 ${
-            openDropdown ? "mt-2" : "mt-0"
-          }`}
-        >
-          <Image
-            src="/Component 4 (1).svg"
-            alt="Forwardin Logo"
-            width={20}
-            height={20}
-            className="ml-4"
-          />
-          <p className="text-black">Forwardin Api</p>
-        </div>
+
         <p className="text-black text-xs mr-48">Others</p>
 
         <div
@@ -307,7 +294,7 @@ export default function Page() {
             <div className="flex flex-col justify-start  text-left">
               <p className="text-xs text-black opacity-40 ">Tanggal hari ini</p>
               <p className="text-xs text-black opacity-70 ">
-                Selasa, 29 Agustus 2024
+                Rabu, 18 Desember 2024
               </p>
             </div>
             <Calendar size={20} weight="fill" className="text-black" />
@@ -332,7 +319,7 @@ export default function Page() {
                   Tanggal hari ini
                 </p>
                 <p className="text-xs text-black opacity-70 justify-end">
-                  Selasa, 29 Agustus 2024
+                  Rabu, 18 Desember 2024
                 </p>
               </div>
             </div>
@@ -450,7 +437,7 @@ export default function Page() {
           <div className="flex flex-row  items-center gap-2">
             <div className="flex flex-col border-gray-400 border w-[400px] h-full rounded-lg p-4 gap-1">
               <p className="text-black  font-bold mb-2 ">Ringkasan Hari Ini</p>
-              <div className="flex flex-row items-center justify-between">
+              <div className="flex flex-row items-center">
                 <div className="dropdown dropdown-bottom">
                   <div
                     tabIndex={0}
@@ -459,7 +446,7 @@ export default function Page() {
                   >
                     <div className="flex text-left flex-col">
                       <p className="text-black opacity-40 text-xs">Device</p>
-                      <p>RMX3263</p>
+                      <p>Philips</p>
                     </div>
                     <CaretDown size={20} className="text-black" />
                   </div>
@@ -479,22 +466,18 @@ export default function Page() {
                 <div className="bg-gray-200 w-32 h-12  rounded-lg p-1">
                   <div className="flex text-left flex-col text-black justify-center ml-2">
                     <p className="text-black opacity-40 text-xs">Aktif sejak</p>
-                    <p className=" font-bold">29.8.2003</p>
+                    <p className=" font-bold">19/8/2024</p>
                   </div>
                 </div>
               </div>
               <div className="flex flex-row justify-between mt-2">
                 <div className="flex text-left flex-col text-black justify-center ml-2">
-                  <p className="text-black opacity-40 text-xs">Pesan Keluar</p>
+                  <p className="text-black opacity-40 text-xs">Daya Terpakai</p>
                   <p className=" font-bold">24</p>
                 </div>
-                <div className="flex text-left flex-col text-black justify-center ml-2">
-                  <p className="text-black opacity-40 text-xs">Pesan Masuk</p>
+                <div className="flex text-left flex-col text-black justify-center mr-24">
+                  <p className="text-black opacity-40 text-xs">Daya per kWh</p>
                   <p className=" font-bold">7</p>
-                </div>
-                <div className="flex text-left flex-col text-black justify-center ml-2">
-                  <p className="text-black opacity-40 text-xs">Pesan Gagal</p>
-                  <p className=" font-bold">0</p>
                 </div>
               </div>
               <div className="flex flex-row gap-8 items-center mt-4">

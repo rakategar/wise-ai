@@ -16,11 +16,11 @@ export default function Page4() {
         transition={{ duration: 1 }} // Animation duration
       >
         <Image
-          src="/gambarpage4.png"
+          src="/imagegenerate.png"
           alt="Admin Tools Screenshot"
           width={465}
           height={292.36}
-          className="rounded-tl-lg z-[10]"
+          className="rounded-tl-lg z-[10] shadow-2xl rounded-xl"
         />
       </motion.div>
 

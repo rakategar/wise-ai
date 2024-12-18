@@ -23,7 +23,7 @@ ChartJS.register(
 );
 
 const Chart = () => {
-  const NUMBER_CFG = { count: 7, min: 0, max: 100 };
+  const NUMBER_CFG = { count: 12, min: 0, max: 100 };
   const labels = [
     "January",
     "February",
@@ -32,12 +32,17 @@ const Chart = () => {
     "May",
     "June",
     "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
   ];
   const data = {
     labels: labels,
     datasets: [
       {
-        label: "Dataset 1",
+        label: "Home 1",
         data: Array.from(
           { length: NUMBER_CFG.count },
           () =>
@@ -49,7 +54,7 @@ const Chart = () => {
         yAxisID: "y",
       },
       {
-        label: "Dataset 2",
+        label: "Home 2",
         data: Array.from(
           { length: NUMBER_CFG.count },
           () =>
@@ -73,7 +78,7 @@ const Chart = () => {
     plugins: {
       title: {
         display: true,
-        text: "Chart.js Line Chart - Multi Axis",
+        text: "Energy Usage",
       },
     },
     scales: {

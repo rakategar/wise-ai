@@ -88,15 +88,22 @@ export default function Navbar() {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <Link href={"/chatbot"} className="text-secondary font-bold">
+            <Link
+              href={"/chatbot"}
+              className="text-secondary font-bold cursor-pointer"
+            >
               Chat with AI
             </Link>
           </li>
           <li>
-            <a>Demo</a>
+            <Link href={"/calculator"} className="">
+              Calculator
+            </Link>
           </li>
           <li>
-            <a>Blog</a>
+            <Link href={"/about"} className="">
+              About
+            </Link>
           </li>
         </ul>
       </div>
