@@ -101,8 +101,8 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link href={"/about"} className="">
-              About
+            <Link href={"/pricing"} className="">
+              Pricing
             </Link>
           </li>
         </ul>

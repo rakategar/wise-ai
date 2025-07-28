@@ -270,7 +270,7 @@ function Chatbot() {
       <div className="flex flex-col flex-grow justify-end">
         <div className="flex flex-col">
           {file && (
-            <div className="flex flex-row items-center gap-8 justify-center   mr-72 py-4">
+            <div className="flex flex-row items-center gap-8 justify-center  pr-64 mr-72 py-4">
               <img
                 src="/csv.png"
                 width={30}

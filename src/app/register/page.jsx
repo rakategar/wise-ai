@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -10,6 +11,7 @@ export default function Home() {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -51,7 +53,7 @@ export default function Home() {
       if (res.ok) {
         const form = e.target;
         form.reset();
-        router.push("/");
+        router.replace("/dashboard");
       } else {
         console.log("User registration failed.");
       }
@@ -101,13 +103,9 @@ export default function Home() {
       {/* Login Form Section */}
       <div className="w-[466px] flex flex-col justify-center p-[40px] bg-white rounded-lg shadow-md">
         <div className="text-center mb-[40px]">
-          <h2 className="text-2xl font-bold text-black">
-            Welcome to Forwardin
-          </h2>
-          <p className="mt-2 text-sm text-gray-600">
-            Revolutionize your communication
-          </p>
-          <p className="text-sm text-gray-600">journey with Forwardin today</p>
+          <h2 className="text-2xl font-bold text-black">Welcome to wise.ai</h2>
+          <p className="mt-2 text-sm text-gray-600">increase your awareness</p>
+          <p className="text-sm text-gray-600">start from small things</p>
         </div>
 
         <form className="flex flex-col gap-[20px]" onSubmit={handleSubmit}>
